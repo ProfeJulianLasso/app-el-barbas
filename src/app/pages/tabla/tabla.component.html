@@ -1,0 +1,17 @@
+<img *ngIf="loading" src="./assets/images/loading.gif" alt="Loading" width="50px">
+<table border=" 1" *ngIf="characteres">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of characteres.results">
+      <td><img [src]="item.image" alt="" style="width: 100px;"></td>
+      <td>{{ item.name }}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<button mat-button type="button" (click)="loadData()">Cargar datos</button>
